@@ -1,0 +1,32 @@
+package java_test;
+
+public class BankClient {
+	public static void main(String[] args) throws InsufficientBalanceException {
+     
+		BankAccount customer1 = new BankAccount(21, 234);
+        customer1.withdraw(90000);
+    }
+ static class BankAccount {
+  long id;
+  double balance;
+    public BankAccount( long id,double balance){
+        this.id=id;
+        this.balance=balance;
+    }
+    public void withdraw(int Withdrawl_amount) throws InsufficientBalanceException{
+        if(Withdrawl_amount>balance || balance==0){
+            throw new InsufficientBalanceException("Exception");
+        }
+        balance=balance-Withdrawl_amount;
+        System.out.println("You've received "+ (int)(Withdrawl_amount)+" in cash:" );
+    }
+
+}
+ static class InsufficientBalanceException extends Exception{
+    InsufficientBalanceException(String exception){
+        super(exception);
+    }
+}
+}
+
+    
