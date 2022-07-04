@@ -1,0 +1,131 @@
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git checkout -b css-assignments
+Switched to a new branch 'css-assignments'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git commit -m 'css assignments'
+[css-assignments 66a0d94] css assignments
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git status
+On branch css-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git commit -m 'new Readme file'
+[css-assignments 4377683] new Readme file
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git checkout master
+Switched to branch 'master'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git commit -m 'Another new Readme file'
+[master a05d147] Another new Readme file
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git checkout css-assignments
+Switched to branch 'css-assignments'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        README.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git checkout -b master
+fatal: a branch named 'master' already exists
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        README.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git commit -m 'second new Readme File'
+[css-assignments 00271fd] second new Readme File
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (css-assignments)
+$ git checkout master
+Switched to branch 'master'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git commit -m "new commit"
+On branch master
+nothing to commit, working tree clean
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git commit -m "new commit"
+[master a6f4234] new commit
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git merge css-assignments
+Auto-merging README.txt
+CONFLICT (content): Merge conflict in README.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git commit -m "Another commit"
+[master a428f53] Another commit
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git merge css-assignments
+Already up to date.
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git branch -d css-assignments
+Deleted branch css-assignments (was 00271fd).
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$

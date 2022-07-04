@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Question" class="Assignment2.Question">
+        <property name="questionId"  value="111"/>
+        <property name="question" value="what is Spring?"/>
+        <property name="answers">
+            <list>
+                <value>Spring is a lightweight framework </value>
+                <value>he Spring framework comprises several modules such as IOC, AOP, DAO, Context, ORM, WEB MVC etc.</value>
+                <value>It was developed by Rod Johnson in 2003.</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="Question1" class="Assignment2.Question">
+        <property name="questionId"  value="111"/>
+        <property name="question" value="what is Spring?"/>
+        <property name="answersSet">
+            <set>
+                <value>Spring is a lightweight framework </value>
+                <value>he Spring framework comprises several modules such as IOC, AOP, DAO, Context, ORM, WEB MVC etc.</value>
+                <value>It was developed by Rod Johnson in 2003.</value>
+            </set>
+        </property>
+    </bean>
+                                    <!-- using set collection injection -->
+    <bean id="Question2" class="Assignment2.Question">
+        <property name="questionId"  value="111"/>
+        <property name="question" value="what is Spring?"/>
+        <property name="answersMap">
+            <map>
+                <entry key="1" value="Spring is a lightweight framework"/>
+                <entry key="2" value="he Spring framework comprises several modules such as IOC, AOP, DAO, Context, ORM, WEB MVC etc."/>
+                <entry key="3" value="It was developed by Rod Johnson in 2003."/>
+            </map>
+        </property>
+    </bean>
+
+
+
+
+    <bean id="bankAccount1" class="Assignment3.BankAccount">
+        <constructor-arg type = "long" value="1171"/>
+        <constructor-arg value="neeraj"/>
+        <constructor-arg value="Saving"/>
+        <constructor-arg type="double" value="15000"/>
+
+    </bean>
+    <bean id="bankAccount2" class="Assignment3.BankAccount">
+        <constructor-arg type = "long" value="1172"/>
+        <constructor-arg value="Ramesh"/>
+        <constructor-arg value="Current"/>
+        <constructor-arg type="double" value="20000"/>
+
+    </bean>
+    <!--                      without autowiring
+    <bean id="BankRepo" class="com.capgemini.springAssignment.Q3.BankAccountepositoryImpl">
+        <property name="bankAccount">
+            <list>
+                <ref bean="BankAccount1"/>
+                <ref bean="BankAccount2"/>
+            </list>
+        </property>
+    </bean>
+-->
+
+    <!--                                  autowiring by Name
+    <bean id="BankRepo" class="com.capgemini.springAssignment.Q3.BankAccountepositoryImpl" autowire="byName">
+    </bean>
+    -->
+
+    <!--                           autowiring by type   ( it will work if we have only one type )
+    <bean id="BankRepo" class="com.capgemini.springAssignment.Q3.BankAccountepositoryImpl" autowire="byType"/>
+    -->
+
+    <!--                                  autowiring by constructor          -->
+   <bean id="BankRepo" class="Assignment3.BankAccountepositoryImpl" autowire="constructor">
+
+   </bean>
+
+
+    <bean id="controller" class="Assignment3.BankAccountController">
+
+    </bean>
+    
+    <bean id="bankAccount3" class="Assignment4.BankAccount">
+            <constructor-arg type = "long" value="1171"/>
+            <constructor-arg value="neeraj"/>
+            <constructor-arg value="Saving"/>
+            <constructor-arg type="double" value="15000"/>
+
+        </bean>
+    <bean id="bankAccount4" class="Assignment3.BankAccount">
+        <constructor-arg type = "long" value="1172"/>
+        <constructor-arg value="Ramesh"/>
+        <constructor-arg value="Current"/>
+        <constructor-arg type="double" value="20000"/>
+
+    </bean>
+    
+<bean id="studentRequired" class="Assignment5.Student">
+        <property name="name" value="Tony"/>
+    </bean>
+
+    <bean id="studentResource" class="Assignment5.Student">
+        <property name="name" value="Tony"/>
+        <property name="age" value="15"/>
+    </bean>
+    <bean id="school" class = "Assignment5.School">
+        <property name="name" value="HIC"/>
+        <property name="TotalStudent" value="200"/>
+
+    </bean>
+
+    <bean id="school1" class = "Assignment5.School">
+        <property name="name" value="HIC"/>
+        <property name="TotalStudent" value="200"/>
+
+    </bean>
+    <bean id="school2" class = "Assignment5.School">
+        <property name="name" value="LNPS"/>
+        <property name="TotalStudent" value="500"/>
+
+    </bean>
+
+    <bean id="school3" class = "Assignment5.School">
+        <property name="name" value="SSBVM"/>
+        <property name="TotalStudent" value="250"/>
+
+    </bean>
+
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    
+    
+    
+    
+    <bean id="dog" class="Assignment8.Dog" >
+        <property name="name" value="tommy"></property>
+    </bean>
+
+    <!-- using init-method and destroy-method -->
+    <bean id="dog1" class="Assignment8.Dog" init-method="myInit" destroy-method="myDest">
+        <property name="name" value="Jack"/>
+    </bean>
+
+    <!-- Using postConstruct and preDestroy Annontations -->
+
+    <bean id="dog2" class="Assignment8.Dog">
+        <property name="name" value="Serro"/>
+    </bean>
+
+    <!-- we have to add this class inorder to use annonatation for init and destroy method -->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
+    
+    
+    
+    
+     <bean id="LifeCycle" class="Assignment9.BeanLifeCycleDemo">
+        <property name="id" value="10"/>
+        <property name="name" value="Captain America"/>
+    </bean>
+    <bean id="LifeCycle1" class="Assignment9.BeanLifeCycleDemo">
+        <property name="id" value="11"/>
+        <property name="name" value="Iron Man"/>
+    </bean>
+    
+    
+    
+    <bean id="contextAware" class="Assignment10.ApplicationContextAwareExample">
+        <property name="place" value="Delhi"/>
+        <property name="demo" ref="Demo"/>
+    </bean>
+    <bean id="contextAware1" class="Assignment10.ApplicationContextAwareExample">
+        <property name="place" value="Mumbai"/>
+        <property name="demo" ref="Demo"/>
+    </bean>
+
+    <bean id="Demo" class="Assignment10.ApplocationContextAwareDemo" scope="prototype">
+        <property name="x" value="10"/>
+        <property name="y" value="20"/>
+    </bean>
+    
+</beans>

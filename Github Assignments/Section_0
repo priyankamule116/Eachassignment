@@ -1,0 +1,318 @@
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop
+$ mkdir project_dir
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop
+$ cd project_dir
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir
+$ git init
+Initialized empty Git repository in C:/Users/Owner/Desktop/project_dir/.git/
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ touch index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git add index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git commit -m 'index.html'
+[master (root-commit) e76922e] index.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ touch info.txt
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ touch .gitignore
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git add index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git commit -m 'new index'
+[master 56a9fe0] new index
+ 3 files changed, 12 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 info.txt
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git log
+commit 56a9fe00880b73110471b47dda839929670ee909 (HEAD -> master)
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:19:13 2022 +0530
+
+    new index
+
+commit e76922ea059e10afd701f49ccd432156231ee81a
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:11:23 2022 +0530
+
+    index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git log --pretty=oneline
+56a9fe00880b73110471b47dda839929670ee909 (HEAD -> master) new index
+e76922ea059e10afd701f49ccd432156231ee81a index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git revert 56a9fe00880b73110471b47dda839929670ee909
+hint: Waiting for your editor to close the file...       0 [sig] bash 849! sigpacket::process: Suppressing signal 18 to win32 process (pid 12976)
+                                                                                                                                                 20594490 [sig] bash 849! sigpacket::process: Suppressing signal 18 to win32 process (pid 12976)
+[master d23c826] Revert "new index"
+ 3 files changed, 12 deletions(-)
+ delete mode 100644 .gitignore
+ delete mode 100644 info.txt
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git revert e76922ea059e10afd701f49ccd432156231ee81a
+error: Your local changes to the following files would be overwritten by merge:
+        index.html
+Please commit your changes or stash them before you merge.
+Aborting
+fatal: revert failed
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git log
+commit d23c8267dfcf5d140bf337e4ae917570a521efb0 (HEAD -> master)
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:21:14 2022 +0530
+
+    Revert "new index"
+
+    This reverts commit 56a9fe00880b73110471b47dda839929670ee909.
+
+commit 56a9fe00880b73110471b47dda839929670ee909
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:19:13 2022 +0530
+
+    new index
+
+commit e76922ea059e10afd701f49ccd432156231ee81a
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:11:23 2022 +0530
+
+    index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git add index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git commit -m 'my-add'
+[master f912c93] my-add
+ 1 file changed, 12 insertions(+)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git log
+commit f912c93ee9a79237527cdf05b5bb5cfa5c88fd5e (HEAD -> master)
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:27:32 2022 +0530
+
+    my-add
+
+commit d23c8267dfcf5d140bf337e4ae917570a521efb0
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:21:14 2022 +0530
+
+    Revert "new index"
+
+    This reverts commit 56a9fe00880b73110471b47dda839929670ee909.
+
+commit 56a9fe00880b73110471b47dda839929670ee909
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:19:13 2022 +0530
+
+    new index
+
+commit e76922ea059e10afd701f49ccd432156231ee81a
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:11:23 2022 +0530
+
+    index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git revert e76922ea059e10afd701f49ccd432156231ee81a
+CONFLICT (modify/delete): index.html deleted in (empty tree) and modified in HEAD.  Version HEAD of index.html left in tree.
+error: could not revert e76922e... index.html
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master|REVERTING)
+$ git log
+commit f912c93ee9a79237527cdf05b5bb5cfa5c88fd5e (HEAD -> master)
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:27:32 2022 +0530
+
+    my-add
+
+commit d23c8267dfcf5d140bf337e4ae917570a521efb0
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:21:14 2022 +0530
+
+    Revert "new index"
+
+    This reverts commit 56a9fe00880b73110471b47dda839929670ee909.
+
+commit 56a9fe00880b73110471b47dda839929670ee909
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:19:13 2022 +0530
+
+    new index
+
+commit e76922ea059e10afd701f49ccd432156231ee81a
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:11:23 2022 +0530
+
+    index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master|REVERTING)
+$ git revert d23c8267dfcf5d140bf337e4ae917570a521efb0
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master|REVERTING)
+$ git log --pretty=oneline
+f912c93ee9a79237527cdf05b5bb5cfa5c88fd5e (HEAD -> master) my-add
+d23c8267dfcf5d140bf337e4ae917570a521efb0 Revert "new index"
+56a9fe00880b73110471b47dda839929670ee909 new index
+e76922ea059e10afd701f49ccd432156231ee81a index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master|REVERTING)
+$ git revert f912c93ee9a79237527cdf05b5bb5cfa5c88fd5e
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master|REVERTING)
+$ git revert e76922ea059e10afd701f49ccd432156231ee81a
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master|REVERTING)
+$ git add index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master|REVERTING)
+$ git revert e76922ea059e10afd701f49ccd432156231ee81a
+CONFLICT (modify/delete): index.html deleted in (empty tree) and modified in HEAD.  Version HEAD of index.html left in tree.
+error: could not revert e76922e... index.html
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master|REVERTING)
+$ git revert --skip
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git revert --abort
+error: no cherry-pick or revert in progress
+fatal: revert failed
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$ git log
+commit f912c93ee9a79237527cdf05b5bb5cfa5c88fd5e (HEAD -> master)
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:27:32 2022 +0530
+
+    my-add
+
+commit d23c8267dfcf5d140bf337e4ae917570a521efb0
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:21:14 2022 +0530
+
+    Revert "new index"
+
+    This reverts commit 56a9fe00880b73110471b47dda839929670ee909.
+
+commit 56a9fe00880b73110471b47dda839929670ee909
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:19:13 2022 +0530
+
+    new index
+
+commit e76922ea059e10afd701f49ccd432156231ee81a
+Author: Akash <akashkamble7218@gmail.com>
+Date:   Thu Jun 9 09:11:23 2022 +0530
+
+    index.html
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/project_dir (master)
+$

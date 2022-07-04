@@ -1,0 +1,166 @@
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop
+$ mkdir Assignments
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop
+$ cd Assignments
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments
+$ touch README.txt
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments
+$ git init
+Initialized empty Git repository in C:/Users/Owner/Desktop/Assignments/.git/
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.txt
+
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git commit -m 'Readme'
+[master (root-commit) 92e38f8] Readme
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.txt
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git checkout -b html-assignments
+Switched to a new branch 'html-assignments'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git commit -m 'html assignments'
+On branch html-assignments
+nothing to commit, working tree clean
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git commit -m 'html assignments'
+On branch html-assignments
+nothing to commit, working tree clean
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git commit -m 'html assignments'
+On branch html-assignments
+nothing to commit, working tree clean
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git status
+On branch html-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git commit -m 'html assignments'
+[html-assignments 76fea31] html assignments
+ 1 file changed, 1 insertion(+)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git commit -m 'new html assignments'
+[html-assignments c9b072f] new html assignments
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git checkout -b master
+fatal: a branch named 'master' already exists
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git checkout  master
+Switched to branch 'master'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git commit -m 'new Readme'
+On branch master
+nothing to commit, working tree clean
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git commit -m 'new Readme'
+[master 37e17d1] new Readme
+ 1 file changed, 1 insertion(+)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git checkout html-assignments
+Switched to branch 'html-assignments'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git commit -m 'Changed To html assignments'
+[html-assignments b7d61ae] Changed To html assignments
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (html-assignments)
+$ git checkout master
+Switched to branch 'master'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git merge html-assignments
+Auto-merging README.txt
+CONFLICT (content): Merge conflict in README.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git merge html-assignments
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git merge html-assignments
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git commit -m 'another html assignments'
+[master a068701] another html assignments
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git merge html-assignments
+Already up to date.
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git branch -d html-assignments
+Deleted branch html-assignments (was b7d61ae).
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$

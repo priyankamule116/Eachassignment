@@ -1,0 +1,110 @@
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git checkout -b js-assignments
+Switched to a new branch 'js-assignments'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (js-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (js-assignments)
+$ git commit -m 'js assignments'
+[js-assignments 07c5eef] js assignments
+ 1 file changed, 2 insertions(+)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (js-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (js-assignments)
+$ git commit -m 'new js assignments
+> '
+[js-assignments 7217880] new js assignments
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (js-assignments)
+$ git checkout master
+Switched to branch 'master'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git commit -m 'Another js assignments'
+[master a8be167] Another js assignments
+ 1 file changed, 2 insertions(+)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git checkout js-assignments
+Switched to branch 'js-assignments'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (js-assignments)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (js-assignments)
+$ git commit -m 'Another new js assignments'
+[js-assignments 6f5cb05] Another new js assignments
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (js-assignments)
+$ git checkout master
+Switched to branch 'master'
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git merge js-assignments
+Auto-merging README.txt
+CONFLICT (content): Merge conflict in README.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git add .
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master|MERGING)
+$ git commit -m 'new js assignments file'
+[master f69dcd7] new js assignments file
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git merge js-assignments
+Already up to date.
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git branch -d js-assignments
+Deleted branch js-assignments (was 6f5cb05).
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git remote add origin https://github.com/aakashkamble/fresherbatch-oct16.git
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git branch -M master
+
+Owner@DESKTOP-2KE550T MINGW64 /c/Users/Owner/Desktop/Assignments (master)
+$ git push -u origin master
+Enumerating objects: 51, done.
+Counting objects: 100% (51/51), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (51/51), 3.86 KiB | 395.00 KiB/s, done.
+Total 51 (delta 14), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (14/14), done.
+To https://github.com/aakashkamble/fresherbatch-oct16.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+
+
+
+
+
