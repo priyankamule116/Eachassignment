@@ -22,8 +22,8 @@ import java.lang.annotation.Target;
 	String os() default "display";
 	int version() default 1;
 }
-@SmartPhone(os="Android",version=8)
-class NokiaSeries{
+@SmartPhone(version=3)
+class NokiaSeries implements SmartPhone{
 	String model;
 	int size;
 	
@@ -38,7 +38,7 @@ class NokiaSeries{
 public class AnnotationDemo {
 
 	public static void main(String[] args) {
-		NokiaSeries obj=new NokiaSeries("Fire", 5);
+		SmartPhone obj=new NokiaSeries("Fire", 5);
 		
 		Class c=obj.getClass();
 		Annotation an=c.getAnnotation(SmartPhone.class);
